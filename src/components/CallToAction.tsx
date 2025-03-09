@@ -33,21 +33,24 @@ export const CallToAction = () => {
       ref={containerRef}
     >
       <div className="container max-w-xl relative">
-        <motion.div style={{ translateY }}>
+        {/* Helix Image - Hidden on small screens */}
+        <motion.div style={{ translateY }} className="hidden sm:block">
           <Image
             src={helixImage}
             alt="Helix"
             className="absolute top-6 left-[calc(100%+36px)]"
           />
         </motion.div>
-        <motion.div style={{ translateY }}>
+
+        {/* Star Emoji Image - Hidden on small screens */}
+        <motion.div style={{ translateY }} className="hidden sm:block">
           <Image
             src={emojiStarImage}
             alt="Star Emoji"
             className="absolute -top-[120px] right-[calc(100%+24px)]"
           />
         </motion.div>
-        
+
         <motion.h2
           className="font-bold text-5xl tracking-tighter sm:text-6xl"
           variants={textVariants}
@@ -57,19 +60,19 @@ export const CallToAction = () => {
         >
           Get Instant access
         </motion.h2>
-        
+
         <motion.p
           className="text-white/70 mt-5 text-xl"
           variants={textVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }} // Slight delay for stagger effect
+          transition={{ delay: 0.2 }} 
         >
           Celebrate the joy of accomplishment with an app designed to track your
           progress and motivate your efforts.
         </motion.p>
-        
+
         <form className="mt-10 flex flex-col gap-2.5 max-w-sm mx-auto sm:flex-row">
           <input
             type="email"
